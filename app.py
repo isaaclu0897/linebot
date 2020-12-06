@@ -33,9 +33,9 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print(event.)
-    # message = TextSendMessage(text="event.message.text")
-    message = TextSendMessage(text="姚韋辰很帥")
+    print(event.message.text)
+    message = TextSendMessage(text=f"event.message.text{event.message.text}")
+    # message = TextSendMessage(text="姚韋辰很帥")
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
