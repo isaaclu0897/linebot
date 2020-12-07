@@ -47,7 +47,6 @@ def callback():
 def handle_message(event):
     ''' 處理訊息 '''
     print(event.message.text)
-    app.logger.info("Request body: " + body)
     message = TextSendMessage(text=f"event.message.text{event.message.text}")
     line_bot_api.reply_message(event.reply_token, message)
 
