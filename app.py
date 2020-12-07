@@ -28,6 +28,7 @@ def home():
 @app.route("/callback", methods=['POST'])
 def callback():
     ''' 監聽所有來自 /callback 的 Post Request '''
+    print("==========")
     app.logger.info("post /callback")
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -46,6 +47,7 @@ def callback():
 def handle_message(event):
     ''' 處理訊息 '''
     print(event.message.text)
+    app.logger.info("Request body: " + body)
     message = TextSendMessage(text=f"event.message.text{event.message.text}")
     line_bot_api.reply_message(event.reply_token, message)
 
