@@ -28,7 +28,7 @@ def home():
 @app.route("/callback", methods=['POST'])
 def callback():
     ''' 監聽所有來自 /callback 的 Post Request '''
-    print("==========")
+    app.logger.info("==========")
     app.logger.info("post /callback")
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
